@@ -16,7 +16,7 @@ export default function App() {
     const [error, setError] = useState("");
     const [refreshProducts, setRefreshProducts] = useState(false)
 
-    const userId = localStorage.getItem("userId") || 0
+    const userId = localStorage.getItem("userId")
 
     useEffect( () => {
 
