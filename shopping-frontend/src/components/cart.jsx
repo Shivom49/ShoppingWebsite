@@ -22,7 +22,7 @@ try{
     
 const token = localStorage.getItem("token")
 
-const response = await axios.get(`${import.meta.env.VITE_API_URL}//cartPage`, {
+const response = await axios.get(`${import.meta.env.VITE_API_URL}/cartPage`, {
   headers: {
     Authorization: `Bearer ${token}`
   }
