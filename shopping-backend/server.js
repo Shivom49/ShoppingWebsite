@@ -8,6 +8,7 @@ const app = express();
 const { spawn } = require("child_process");
 const PORT = process.env.PORT || 5000
 const mongoURL = process.env.MONGO_URL
+const secretKey = process.env.JWT_SECRET
 
 app.use(cors());
 app.use(express.json());
@@ -533,7 +534,7 @@ return res.status(401).json({
 })
 }
 
-const token = jwt.sign( {userId: user._id , name : user.name}, 'ShivomParashari', {expiresIn : "7d"})
+const token = jwt.sign( {userId: user._id , name : user.name}, secretKey, {expiresIn : "7d"})
 
 
 return res.status(200).json({ token, 
