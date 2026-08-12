@@ -1,0 +1,454 @@
+.aboutUs-wrapper {
+      min-height: calc(100vh - 70px);
+
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px 25px;
+    box-sizing: border-box;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(10, 102, 194, 0.08),
+            transparent 35%
+        ),
+        #f8fafc;
+}
+
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.about-card {
+    position: relative;
+    flex: 1;
+
+    width: 100%;
+    max-width: 1100px;
+
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    padding: 45px;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 28px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.06),
+        0 30px 70px rgba(0, 0, 0, 0.06);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Gradient line on top */
+
+.about-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        #0A66C2,
+        #7c3aed,
+        #E4405F
+    );
+}
+
+
+.about-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.08),
+        0 35px 80px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-section {
+    min-width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+
+.image-border {
+    padding: 5px;
+   
+
+    border-radius: 32px;
+
+    background: linear-gradient(
+        135deg,
+        #0A66C2,
+        #7c3aed,
+        #E4405F
+    );
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.15);
+        
+}
+
+
+.profile-image {
+    display: block;
+
+    width: 280px;
+    height: 330px;
+
+    object-fit: cover;
+
+    border-radius: 27px;
+
+    background: white;
+}
+
+
+/* Availability */
+
+.availability {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 20px;
+
+    padding: 8px 14px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+
+    color: #475569;
+
+    background: #f1f5f9;
+
+    border-radius: 50px;
+}
+
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    background: #22c55e;
+
+    border-radius: 50%;
+
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15);
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content-inner {
+    flex: 1;
+}
+
+
+.about-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-bottom: 10px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #0A66C2;
+}
+
+
+.content-inner h2 {
+    margin: 0;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    font-weight: 700;
+
+    color: #0f172a;
+
+    letter-spacing: -1px;
+}
+
+
+.content-inner h4 {
+    margin: 8px 0 22px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 1rem;
+    font-weight: 500;
+
+    color: #64748b;
+}
+
+
+.content-inner h4 span {
+    color: #0A66C2;
+}
+
+
+.content-inner p {
+    margin: 0 0 15px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 1rem;
+    line-height: 1.8;
+
+    color: #475569;
+}
+
+
+.content-inner p strong {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+
+/* =========================
+   SOCIAL SECTION
+========================= */
+
+.social-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    margin-top: 25px;
+    padding-top: 20px;
+
+    border-top: 1px solid #e2e8f0;
+}
+
+
+.social-text {
+    font-family: "Inter", sans-serif;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #475569;
+}
+
+
+.social-icons {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* Social buttons */
+
+.social-icons a {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 12px;
+
+    font-size: 21px;
+
+    text-decoration: none;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+
+/* Instagram */
+
+.instagram {
+    color: #E4405F;
+}
+
+
+.instagram:hover {
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #833AB4,
+        #E1306C,
+        #F77737
+    );
+
+    border-color: transparent;
+}
+
+
+/* LinkedIn */
+
+.linkedin {
+    color: #0A66C2;
+}
+
+
+.linkedin:hover {
+    color: white;
+
+    background: #0A66C2;
+
+    border-color: #0A66C2;
+}
+
+
+/* Github */
+
+.github {
+    color: #181717;
+}
+
+
+.github:hover {
+    color: white;
+
+    background: #181717;
+
+    border-color: #181717;
+}
+
+
+/* All icon hover */
+
+.social-icons a:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 850px) {
+
+    .about-card {
+        gap: 30px;
+
+        padding: 35px;
+    }
+
+    .profile-section {
+        min-width: 230px;
+    }
+
+    .profile-image {
+        width: 220px;
+        height: 280px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .aboutUs-wrapper {
+        padding: 30px 15px;
+        align-items: flex-start;
+    }
+
+    .about-card {
+        flex-direction: column;
+
+        padding: 25px 20px;
+
+        gap: 30px;
+
+        border-radius: 22px;
+    }
+
+    .profile-section {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .profile-image {
+        width: 220px;
+        height: 260px;
+    }
+
+    .content-inner {
+        text-align: center;
+    }
+
+    .about-label {
+        justify-content: center;
+    }
+
+    .content-inner h2 {
+        font-size: 2rem;
+    }
+
+    .content-inner h4 {
+        line-height: 1.6;
+    }
+
+    .content-inner p {
+        text-align: left;
+
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+
+    .social-section {
+        justify-content: center;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+}

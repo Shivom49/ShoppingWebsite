@@ -1,0 +1,104 @@
+.cart-card{
+    width: 260px;
+    min-height: 340px;   /* ya 360px, image ke hisaab se */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    background: white;
+    transition: 0.3s;
+}
+
+.cart-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+
+.cart-card img{
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    display: block;
+}
+
+
+.cart-card h2{
+    margin-top: 15px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.cart-price{
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.cart-card p{
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cart-buttons{
+    display: flex;
+    gap: 10px;
+}
+
+.cart-buttons button{
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+
+.cart-buttons button:disabled{
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.cart-buttons button:first-child:not(:disabled):hover{
+    background-color: #b02a37;
+}
+
+.cart-buttons button:last-child:hover{
+    background-color: #218838;
+}
+
+.cart-error{
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+.cart-buttons button:first-child{
+    background-color: #dc3545;
+    color: white;
+    border: none;
+}
+
+
+.cart-buttons button:last-child{
+    background-color: #28a745;
+    color: white;
+    border: none;
+}
+
+.cart-buttons button:first-child:hover{
+    background-color: #b02a37;
+}
+
+
+.cart-buttons button:last-child:hover{
+    background-color: #218838;
+}
+
+
+
