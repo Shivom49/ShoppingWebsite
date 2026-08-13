@@ -92,7 +92,7 @@ return(<>
 <div className="card" >
 <img src={`/images/${props.id}.jpg`} alt={props.name} />
 <h1>{props.name}</h1>
-<p>price : {props.price}</p>
+<p>Price: ₹{props.price}</p>
 {cartStatus ? <button disabled={loading} onClick={removeCart}> {loading ? "Removing..." : "Added to Cart"}</button> : <button disabled={loading} onClick={addCart}> <FaShoppingCart style={{ marginRight: "8px" }}/>{loading ? "Adding..." : "Add to Cart"} </button>  }
 {loginError ? <p className= "login-error">Please log in to add items to your cart</p> : null}
 </div>
