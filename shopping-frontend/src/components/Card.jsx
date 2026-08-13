@@ -8,6 +8,7 @@ export default function Card(props){
 
 const [cartStatus, setCartStatus] = useState(false)
 const [loading, setLoading] = useState(false)
+const [loginError, setLoginError] = useState(false)
 const timeoutRef = useRef(null);
 
 
@@ -18,8 +19,17 @@ async function addCart()
 
 try{
 setLoading(true)
+
 const token = localStorage.getItem("token");
-const response = await axios.post(`${import.meta.env.VITE_API_URL}/addCart`, {productId: props.productId, }, {
+
+if(!token)
+{
+setLoginError(true)
+
+setTimeout(()=>{setLoginError(false) }, 3000)
+return
+}
+const response = await axios.post("http://localhost:5000/addCart", {productId: props.productId, }, {
    headers : {Authorization : `Bearer ${token}`, "Content-Type": "application/json"}
 }
 )
@@ -56,7 +66,7 @@ setLoading(true)
 
 const token = localStorage.getItem("token")
 
-const response = await axios.delete(`${import.meta.env.VITE_API_URL}/${props.productId}`, { 
+const response = await axios.delete(`http://localhost:5000/deleteCart/${props.productId}`, { 
    headers : {Authorization : `Bearer ${token}`}
  } )
 
@@ -82,8 +92,9 @@ return(<>
 <div className="card" >
 <img src={`/images/${props.id}.jpg`} alt={props.name} />
 <h1>{props.name}</h1>
-<p>Price: ₹{props.price}</p>
+<p>price : {props.price}</p>
 {cartStatus ? <button disabled={loading} onClick={removeCart}> {loading ? "Removing..." : "Added to Cart"}</button> : <button disabled={loading} onClick={addCart}> <FaShoppingCart style={{ marginRight: "8px" }}/>{loading ? "Adding..." : "Add to Cart"} </button>  }
+{loginError ? <p className= "login-error">Please log in to add items to your cart</p> : null}
 </div>
 
 </>)
