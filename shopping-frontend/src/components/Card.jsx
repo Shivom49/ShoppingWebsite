@@ -29,7 +29,7 @@ setLoginError(true)
 setTimeout(()=>{setLoginError(false) }, 3000)
 return
 }
-const response = await axios.post("http://localhost:5000/addCart", {productId: props.productId, }, {
+const response = await axios.post(`${import.meta.env.VITE_API_URL}/addCart`, {productId: props.productId, }, {
    headers : {Authorization : `Bearer ${token}`, "Content-Type": "application/json"}
 }
 )
@@ -66,7 +66,7 @@ setLoading(true)
 
 const token = localStorage.getItem("token")
 
-const response = await axios.delete(`http://localhost:5000/deleteCart/${props.productId}`, { 
+const response = await axios.delete(`${import.meta.env.VITE_API_URL}/deleteCart/${props.productId}`, { 
    headers : {Authorization : `Bearer ${token}`}
  } )
 
